@@ -1569,11 +1569,11 @@ public class GLTFUnarchiver {
         //var skeleton: SCNNode?
         var _skinner: SCNSkinner?
         for primitive in meshNode.childNodes {
-            if let weights = primitive.geometry?.sources(for: .boneWeights) {
+            if let weights = primitive.geometry?.getGeometrySources(for: .boneWeights) {
                 let boneWeights = weights[0]
                 
                 let baseGeometry = primitive.geometry!
-                guard let _joints = primitive.geometry?.sources(for: .boneIndices) else {
+                guard let _joints = primitive.geometry?.getGeometrySources(for: .boneIndices) else {
                     throw GLTFUnarchiveError.DataInconsistent("loadSkin: JOINTS_0 is not defined")
                 }
                 let boneIndices = _joints[0]
