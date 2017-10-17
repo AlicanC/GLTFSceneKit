@@ -432,32 +432,33 @@ public class GLTFUnarchiver {
             let dataSize = dataStride * vectorCount
             bufferView = Data(count: dataSize)
         }
-        
-        print("==================================================")
-        print("semantic: \(semantic)")
-        print("vectorCount: \(vectorCount)")
-        print("usesFloatComponents: \(usesFloatComponents)")
-        print("componentsPerVector: \(componentsPerVector)")
-        print("bytesPerComponent: \(bytesPerComponent)")
-        print("dataOffset: \(dataOffset)")
-        print("dataStride: \(dataStride)")
-        print("bufferView.count: \(bufferView.count)")
-        print("padding: \(padding)")
-        print("dataOffset + dataStride * vectorCount - padding: \(dataOffset + dataStride * vectorCount - padding)")
-        print("==================================================")
-        
-        // DEBUG
-        if semantic == .texcoord {
-            bufferView.withUnsafeBytes { (p: UnsafePointer<Float32>) in
-                for i in 0..<vectorCount {
-                    let index = (i * dataStride + dataOffset) / 4
-                    let i1 = p[index + 0]
-                    let i2 = p[index + 1]
-                    print("\(i): \(i1), \(i2)")
+
+        #if DEBUG
+            print("==================================================")
+            print("semantic: \(semantic)")
+            print("vectorCount: \(vectorCount)")
+            print("usesFloatComponents: \(usesFloatComponents)")
+            print("componentsPerVector: \(componentsPerVector)")
+            print("bytesPerComponent: \(bytesPerComponent)")
+            print("dataOffset: \(dataOffset)")
+            print("dataStride: \(dataStride)")
+            print("bufferView.count: \(bufferView.count)")
+            print("padding: \(padding)")
+            print("dataOffset + dataStride * vectorCount - padding: \(dataOffset + dataStride * vectorCount - padding)")
+            print("==================================================")
+
+            if semantic == .texcoord {
+                bufferView.withUnsafeBytes { (p: UnsafePointer<Float32>) in
+                    for i in 0..<vectorCount {
+                        let index = (i * dataStride + dataOffset) / 4
+                        let i1 = p[index + 0]
+                        let i2 = p[index + 1]
+                        print("\(i): \(i1), \(i2)")
+                    }
                 }
             }
-        }
-        
+        #endif
+
         #if SEEMS_TO_HAVE_VALIDATE_VERTEX_ATTRIBUTE_BUG
             // Metal validateVertexAttribute function seems to have a bug, so dateOffset must be 0.
             bufferView = bufferView.subdata(in: dataOffset..<dataOffset + dataStride * vectorCount - padding)
