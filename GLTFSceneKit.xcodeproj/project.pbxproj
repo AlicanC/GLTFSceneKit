@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4081669D1F96A74F0057BAED /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4081669C1F96A74F0057BAED /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */; };
 		DD071E041F55ED1200F00567 /* GLTFShaderModifierSurface.shader in Sources */ = {isa = PBXBuildFile; fileRef = DD071E031F55ED1200F00567 /* GLTFShaderModifierSurface.shader */; };
 		DD071E051F55ED1200F00567 /* GLTFShaderModifierSurface.shader in Sources */ = {isa = PBXBuildFile; fileRef = DD071E031F55ED1200F00567 /* GLTFShaderModifierSurface.shader */; };
 		DD071E061F55F3EC00F00567 /* GLTFShaderModifierSurface.shader in Resources */ = {isa = PBXBuildFile; fileRef = DD071E031F55ED1200F00567 /* GLTFShaderModifierSurface.shader */; };
@@ -156,6 +157,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4081669C1F96A74F0057BAED /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift; sourceTree = "<group>"; };
 		DD071E031F55ED1200F00567 /* GLTFShaderModifierSurface.shader */ = {isa = PBXFileReference; lastKnownFileType = text; path = GLTFShaderModifierSurface.shader; sourceTree = "<group>"; };
 		DD1045991F47723D004B20CE /* GLTFTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFTypes.swift; sourceTree = "<group>"; };
 		DD10459B1F4772E3004B20CE /* GLTFErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLTFErrors.swift; sourceTree = "<group>"; };
@@ -257,11 +259,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4081669B1F96A6C10057BAED /* KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness */ = {
+			isa = PBXGroup;
+			children = (
+				4081669C1F96A74F0057BAED /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift */,
+			);
+			path = "KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness";
+			sourceTree = "<group>";
+		};
 		DD2E982B1F4CF55400D47C89 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DD2E982D1F4CF5B800D47C89 /* ExtensionList.swift */,
 				DD2E982F1F4CF6FA00D47C89 /* KHR_materials_common */,
+				4081669B1F96A6C10057BAED /* KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness KHR_materials_pbrSpecularGlossiness */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -682,6 +693,7 @@
 				DDE6FD721F466F3600CB11D6 /* GLTFGlTFid.swift in Sources */,
 				DDE6FD701F466F3600CB11D6 /* GLTFGlTF.swift in Sources */,
 				DD10459A1F47723D004B20CE /* GLTFTypes.swift in Sources */,
+				4081669D1F96A74F0057BAED /* GLTFKHRMaterialsPbrSpecularGlossiness_GLTFKHRMaterialsPbrSpecularGlossiness.swift in Sources */,
 				DD10459C1F4772E3004B20CE /* GLTFErrors.swift in Sources */,
 				DD2E982E1F4CF5B800D47C89 /* ExtensionList.swift in Sources */,
 				DDE6FD611F466F3600CB11D6 /* GLTFAccessorSparse.swift in Sources */,

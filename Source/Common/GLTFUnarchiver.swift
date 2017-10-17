@@ -930,7 +930,7 @@ public class GLTFUnarchiver {
         return texture
     }
     
-    private func setTexture(index: Int, to property: SCNMaterialProperty) throws {
+    func setTexture(index: Int, to property: SCNMaterialProperty) throws {
         let texture = try self.loadTexture(index: index)
         guard let contents = texture.contents else {
             throw GLTFUnarchiveError.DataInconsistent("setTexture: contents of texture \(index) is nil")
